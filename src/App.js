@@ -1,5 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
+import Launches from './components/Launches';
 import React from 'react';
 import api from "./api/Api.js";
 
@@ -55,14 +55,12 @@ import api from "./api/Api.js";
 
 }
 
-
 function App() {
   return (
     
     <div className="App">
-      
+      <Launches/>
       <Capsules/>
-      
     </div>
   );
 }
