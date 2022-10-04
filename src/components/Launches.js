@@ -21,6 +21,9 @@ export default class Launches extends React.Component {
             <table className="table table-bordered">
                 <thead>
                     <tr>
+                        <th colSpan={7}>LAUNCHES</th>
+                    </tr>
+                    <tr>
                         <th rowSpan={2}>Flight number</th>
                         <th rowSpan={2}>Mission name</th>
                         <th rowSpan={2}>Launch Year</th>
