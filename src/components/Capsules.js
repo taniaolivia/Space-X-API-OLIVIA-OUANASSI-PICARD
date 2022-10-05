@@ -1,6 +1,7 @@
 import React, {useEffect} from "react";
 import api from "../api/Api.js";
 import {Table} from "react-bootstrap";
+import {format} from "date-fns";
 
 export default function Capsules() {
  
@@ -10,7 +11,6 @@ export default function Capsules() {
     api.get(`capsules`).then((res) => {
       const capsules = res.data;
       setCapsules(capsules);
-      console.log(capsules)
     });
   }, []);
   
@@ -44,14 +44,14 @@ export default function Capsules() {
             <td>{capsule.capsule_id}</td>
             <td>{capsule.capsule_serial}</td>
             <td>{capsule.status}</td>
-            <td>{capsule.original_launch}</td>
+            <td>{format(new Date(capsule.original_launch),  "dd MMMM yyyy, HH:mm")}</td>
             <td>{capsule.original_launch_unix}</td>
             <td>{capsule.landings}</td>
             <td>{capsule.type}</td>
             <td>{capsule.reuse_count}</td>
             <td>{capsule.details}</td>
-            <td>{capsule.missions.map((mission)=> {return <p>{mission.name}</p>})}</td>
-            <td>{capsule.missions.map((mission)=> {return <p>{mission.flight}</p>})}</td>
+            <td>{capsule.missions.map((mission)=> {return <p key={mission.flight}>{mission.name}</p>})}</td>
+            <td>{capsule.missions.map((mission)=> {return <p key={mission.flight}>{mission.flight}</p>})}</td>
           </tr>
         ))}
       </tbody>
