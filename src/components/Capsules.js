@@ -18,24 +18,24 @@ export default function Capsules() {
     <Table striped>
      <thead>
         <tr>
-          <th colSpan={7}>CAPSULES</th>
+          <th colSpan={10}>CAPSULES</th>
         </tr>
         <tr>
-          <th rowSpan={2}>capsule_id</th>
-          <th rowSpan={2}>capsule_serial </th>
+          <th rowSpan={2}>Capsule ID</th>
+          <th rowSpan={2}>Capsule serial </th>
           <th rowSpan={2}>status</th>
-          <th rowSpan={2}>original_launch</th>
-          <th rowSpan={2}>original_launch_unix</th>
-          <th rowSpan={2}>landings</th>
-          <th rowSpan={2}>type</th>
-          <th rowSpan={2}>reuse_count</th>
-          <th rowSpan={2}>details</th>
-          <th colSpan={2}>missions</th>
+          <th rowSpan={2}>Original launch</th>
+          <th rowSpan={2}>Original launch unix</th>
+          <th rowSpan={2}>Landings</th>
+          <th rowSpan={2}>Type</th>
+          <th rowSpan={2}>Reuse count</th>
+          <th rowSpan={2}>Details</th>
+          <th colSpan={2}>Missions</th>
 
         </tr>
         <tr>
-          <th rowSpan={2}>name</th>
-          <th rowSpan={2}>flight</th>
+          <th rowSpan={2}>Name</th>
+          <th rowSpan={2}>Flight</th>
         </tr>
       </thead>
       <tbody>
@@ -45,7 +45,7 @@ export default function Capsules() {
             <td>{capsule.capsule_serial}</td>
             <td>{capsule.status}</td>
             <td>{format(new Date(capsule.original_launch),  "dd MMMM yyyy, HH:mm")}</td>
-            <td>{capsule.original_launch_unix}</td>
+            <td>{format(new Date(capsule.original_launch_unix),  "dd MMMM yyyy, HH:mm")}</td>
             <td>{capsule.landings}</td>
             <td>{capsule.type}</td>
             <td>{capsule.reuse_count}</td>
