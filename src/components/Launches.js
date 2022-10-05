@@ -34,7 +34,7 @@ export default function Launches() {
       </thead>
       <tbody>
         {launches.map((launch) => (
-          <tr key={launch.flight_number}>
+          <tr key={launch.mission_name}>
             <th>{launch.flight_number}</th>
             <td>{launch.mission_name}</td>
             <td>{launch.launch_year}</td>
