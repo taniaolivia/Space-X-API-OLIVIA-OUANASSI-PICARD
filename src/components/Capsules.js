@@ -33,7 +33,7 @@ export default function Capsules() {
       </thead>
       <tbody>
         {capsules.map((capsule) => (
-          <tr key={capsule.capsule_id}>
+          <tr key={capsule.capsule_serial}>
             <td>{capsule.capsule_id}</td>
             <td>{capsule.capsule_serial}</td>
             <td>{capsule.status}</td>
