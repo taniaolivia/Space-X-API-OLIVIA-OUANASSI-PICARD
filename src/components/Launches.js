@@ -54,7 +54,7 @@ export default function Launches() {
                         src={image}
                         alt="Launch"
                         className="d-block h-100 mx-auto"
-                        style={{ maxHeight: 350}}
+                        style={{ maxHeight: 350 }}
                       />
                     </Carousel.Item>
                   ))}

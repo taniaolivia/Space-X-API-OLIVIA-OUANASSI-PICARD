@@ -1,10 +1,9 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import api from "../api/Api.js";
-import {Table} from "react-bootstrap";
-import {format} from "date-fns";
+import { Table } from "react-bootstrap";
+import { format } from "date-fns";
 
 export default function Capsules() {
- 
   const [capsules, setCapsules] = React.useState([]);
 
   useEffect(() => {
@@ -13,12 +12,12 @@ export default function Capsules() {
       setCapsules(capsules);
     });
   }, []);
-  
+
   return (
     <Table striped>
-     <thead>
+      <thead>
         <tr>
-          <th colSpan={10}>CAPSULES</th>
+          <th colSpan={12}>CAPSULES</th>
         </tr>
         <tr>
           <th rowSpan={2}>Capsule ID</th>
@@ -30,7 +29,6 @@ export default function Capsules() {
           <th rowSpan={2}>Reuse count</th>
           <th rowSpan={2}>Details</th>
           <th colSpan={2}>Missions</th>
-
         </tr>
         <tr>
           <th rowSpan={2}>Name</th>
@@ -43,13 +41,23 @@ export default function Capsules() {
             <td>{capsule.capsule_id}</td>
             <td>{capsule.capsule_serial}</td>
             <td>{capsule.status}</td>
-            <td>{format(new Date(capsule.original_launch),  "dd MMMM yyyy, HH:mm")}</td>
+            <td>
+              {format(new Date(capsule.original_launch), "dd MMMM yyyy, HH:mm")}
+            </td>
             <td>{capsule.landings}</td>
             <td>{capsule.type}</td>
             <td>{capsule.reuse_count}</td>
             <td>{capsule.details}</td>
-            <td>{capsule.missions.map((mission)=> {return <p key={mission.flight}>{mission.name}</p>})}</td>
-            <td>{capsule.missions.map((mission)=> {return <p key={mission.flight}>{mission.flight}</p>})}</td>
+            <td>
+              {capsule.missions.map((mission) => {
+                return <p key={mission.flight}>{mission.name}</p>;
+              })}
+            </td>
+            <td>
+              {capsule.missions.map((mission) => {
+                return <p key={mission.flight}>{mission.flight}</p>;
+              })}
+            </td>
           </tr>
         ))}
       </tbody>
