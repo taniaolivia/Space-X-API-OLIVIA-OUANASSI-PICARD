@@ -25,7 +25,6 @@ export default function Capsules() {
           <th rowSpan={2}>Capsule serial </th>
           <th rowSpan={2}>status</th>
           <th rowSpan={2}>Original launch</th>
-          <th rowSpan={2}>Original launch unix</th>
           <th rowSpan={2}>Landings</th>
           <th rowSpan={2}>Type</th>
           <th rowSpan={2}>Reuse count</th>
@@ -45,7 +44,6 @@ export default function Capsules() {
             <td>{capsule.capsule_serial}</td>
             <td>{capsule.status}</td>
             <td>{format(new Date(capsule.original_launch),  "dd MMMM yyyy, HH:mm")}</td>
-            <td>{format(new Date(capsule.original_launch_unix),  "dd MMMM yyyy, HH:mm")}</td>
             <td>{capsule.landings}</td>
             <td>{capsule.type}</td>
             <td>{capsule.reuse_count}</td>
