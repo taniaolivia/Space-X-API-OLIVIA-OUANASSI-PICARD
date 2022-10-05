@@ -2,11 +2,10 @@ version: '3.7'
 
 services:
 
-  sample:
-    container_name: sample
+  spacex:
+    container_name: spacex
     build:
       context: .
-      dockerfile: Dockerfile
     volumes:
       - './src:/app/src'
     ports:
