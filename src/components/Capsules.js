@@ -9,7 +9,6 @@ export default function Capsules() {
     api.get(`capsules`).then((res) => {
       const capsules = res.data;
       setCapsules(capsules);
-      console.log(capsules)
     });
   }, []);
   
