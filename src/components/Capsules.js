@@ -49,8 +49,8 @@ export default function Capsules() {
             <td>{capsule.type}</td>
             <td>{capsule.reuse_count}</td>
             <td>{capsule.details}</td>
-            <td>{capsule.missions.map((mission)=>mission.name)}</td>
-            <td>{capsule.missions.map((mission)=>mission.flight)}</td>
+            <td>{capsule.missions.map((mission)=> {return <p>{mission.name}</p>})}</td>
+            <td>{capsule.missions.map((mission)=> {return <p>{mission.flight}</p>})}</td>
           </tr>
         ))}
       </tbody>
