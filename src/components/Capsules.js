@@ -10,7 +10,10 @@ export default  class Capsules extends React.Component{
         .then(res => {
           const capsules = res.data;
           this.setState({ capsules });
+          console.log(capsules)
         })
+
+        
     }
   
     render() {
@@ -35,8 +38,8 @@ export default  class Capsules extends React.Component{
                   </thead>
                   <tbody>
                       {
-                          this.state.capsules.map(capsule =>
-                              <tr key={capsule.capsule_id}> 
+                          this.state.capsules.map((capsule) =>
+                              <tr key={capsule.capsule_serial}> 
                                   <th>{capsule.capsule_serial}</th>
                                   <td>{capsule.status}</td>
                                   <td>{capsule.mission}</td>
