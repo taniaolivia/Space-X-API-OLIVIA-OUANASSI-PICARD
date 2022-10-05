@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import api from "../api/Api.js";
 import { format } from "date-fns";
+import {Table} from "react-bootstrap";
 
 export default function Launches() {
   const [launches, setLaunches] = React.useState([]);
@@ -13,7 +14,7 @@ export default function Launches() {
   }, []);
 
   return (
-    <table className="table table-bordered">
+    <Table striped>
       <thead>
         <tr>
           <th colSpan={7}>LAUNCHES</th>
@@ -44,6 +45,6 @@ export default function Launches() {
           </tr>
         ))}
       </tbody>
-    </table>
+    </Table>
   );
 }

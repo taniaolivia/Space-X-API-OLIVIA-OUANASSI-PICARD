@@ -15,8 +15,8 @@ export default function Capsules() {
   }, []);
   
   return (
-    <table className="table table-bordered">
-      <thead>
+    <Table striped>
+     <thead>
         <tr>
           <th colSpan={7}>CAPSULES</th>
         </tr>
@@ -55,6 +55,6 @@ export default function Capsules() {
           </tr>
         ))}
       </tbody>
-    </table>
+    </Table>
   );
 }
