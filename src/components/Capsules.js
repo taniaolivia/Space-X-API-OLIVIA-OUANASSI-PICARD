@@ -9,10 +9,10 @@ export default function Capsules() {
     api.get(`capsules`).then((res) => {
       const capsules = res.data;
       setCapsules(capsules);
+      console.log(capsules)
     });
   }, []);
   
-
   return (
     <table className="table table-bordered">
       <thead>
@@ -23,12 +23,18 @@ export default function Capsules() {
           <th rowSpan={2}>capsule_id</th>
           <th rowSpan={2}>capsule_serial </th>
           <th rowSpan={2}>status</th>
-          <th rowSpan={2}>mission</th>
+          <th rowSpan={2}>original_launch</th>
+          <th rowSpan={2}>original_launch_unix</th>
+          <th rowSpan={2}>landings</th>
+          <th rowSpan={2}>type</th>
+          <th rowSpan={2}>reuse_count</th>
+          <th rowSpan={2}>details</th>
+          <th colSpan={2}>missions</th>
+
         </tr>
         <tr>
-          <th>landings</th>
-          <th>type</th>
-          <th>reuse_count</th>
+          <th rowSpan={2}>name</th>
+          <th rowSpan={2}>flight</th>
         </tr>
       </thead>
       <tbody>
@@ -37,10 +43,14 @@ export default function Capsules() {
             <td>{capsule.capsule_id}</td>
             <td>{capsule.capsule_serial}</td>
             <td>{capsule.status}</td>
-            <td>{capsule.mission}</td>
+            <td>{capsule.original_launch}</td>
+            <td>{capsule.original_launch_unix}</td>
             <td>{capsule.landings}</td>
             <td>{capsule.type}</td>
             <td>{capsule.reuse_count}</td>
+            <td>{capsule.details}</td>
+            <td>{capsule.missions.map((mission)=>mission.name)}</td>
+            <td>{capsule.missions.map((mission)=>mission.flight)}</td>
           </tr>
         ))}
       </tbody>
