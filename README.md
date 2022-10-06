@@ -3,4 +3,4 @@
 ## Groupe :
 - Tania OLIVIA
 - Nihel OUANASSI
-- Killian PICHARD
+- Kilian PICHARD
